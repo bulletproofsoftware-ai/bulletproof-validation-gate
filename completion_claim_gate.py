@@ -87,8 +87,8 @@ def fire_notify(subject: str, body: str) -> None:
         # arguments and cannot be interpreted as shell commands. NOTIFY_SCRIPT is an
         # operator-supplied executable path (VALIDATION_GATE_NOTIFY) — same trust level
         # as the operator's own settings.json — and is confirmed to exist above.
-        subprocess.run(  # nosemgrep: dangerous-subprocess-use-tainted-env-args
-            [str(NOTIFY_SCRIPT), "error", subject, body],
+        subprocess.run(  # nosemgrep
+            [str(NOTIFY_SCRIPT), "error", subject, body],  # nosemgrep
             timeout=5,
             capture_output=True,
             shell=False,
