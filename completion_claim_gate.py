@@ -278,7 +278,7 @@ def main() -> None:
             "Completion claim gate: FAIL",
             f"Reason: {reason}\nSession: {session_id}\nVerdict log: {verdict_path}",
         )
-        # Block the stop and force me to address the missing evidence.
+        # Block the stop and require the missing evidence to be addressed.
         block_msg = (
             f"COMPLETION-CLAIM GATE refused this turn's done-claim.\n"
             f"Verifier ({OLLAMA_MODEL}) verdict: FAIL\n"
@@ -293,7 +293,7 @@ def main() -> None:
         emit_block(block_msg)
     else:
         # PASS, ERROR, or UNPARSEABLE — let through. ERROR/UNPARSEABLE means
-        # Gemini was unavailable; we don't want to block in that case.
+        # the verifier was unavailable; we don't want to block in that case.
         emit_pass_through()
 
 
