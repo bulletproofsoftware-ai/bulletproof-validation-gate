@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /absolute/path/to/bulletproof-validation-gate/completion_claim_gate.py",
+            "timeout": 35000
+          }
+        ]
+      }
+    ]
+  }
+}
