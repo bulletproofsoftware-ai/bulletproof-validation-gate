@@ -4,7 +4,7 @@
 
 ![bulletproof-validation-gate — overview](docs/media/infographic.png)
 
-> Docs: [OVERVIEW](docs/OVERVIEW.md) · [INSTALL](docs/INSTALL.md) · [HOW-TO-USE](docs/HOW-TO-USE.md) · [ADMINISTRATOR](docs/ADMINISTRATOR.md) · [SBOM](docs/SBOM.md) · [scan report](docs/scan/scan-report.md). Media (infographic, slide deck, explainer video, briefing) lives in [`docs/media/`](docs/media/).
+> Docs: [OVERVIEW](docs/OVERVIEW.md) · [INSTALL](docs/INSTALL.md) · [HOW-TO-USE](docs/HOW-TO-USE.md) · [ADMINISTRATOR](docs/ADMINISTRATOR.md) · [SBOM](docs/SBOM.md) · [scan report](docs/scan/scan-report.md). Media (infographic, slide deck, explainer video, briefing) lives in [`media/`](media/).
 
 AI coding assistants love to say "Done!", "Fixed!", "All working!" — often without
 actually showing you the evidence. `bulletproof-validation-gate` is a Claude Code
