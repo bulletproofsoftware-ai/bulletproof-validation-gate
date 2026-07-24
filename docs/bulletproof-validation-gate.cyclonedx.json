@@ -1,0 +1,46 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-07-24T00:00:00Z",
+    "authors": [
+      { "name": "bulletproofsoftware-ai" }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:generic/bulletproof-validation-gate",
+      "name": "bulletproof-validation-gate",
+      "version": "1.0.0",
+      "description": "A Claude Code Stop hook that adversarially verifies completion claims via a local Ollama model.",
+      "licenses": [
+        { "license": { "id": "Apache-2.0" } }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/bulletproofsoftware-ai/bulletproof-validation-gate"
+        }
+      ],
+      "properties": [
+        { "name": "language", "value": "python" },
+        { "name": "python:minimum-version", "value": "3.8" },
+        { "name": "dependencies:third-party-runtime", "value": "0" },
+        { "name": "dependencies:third-party-dev", "value": "0" }
+      ]
+    }
+  },
+  "components": [],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/bulletproof-validation-gate",
+      "dependsOn": []
+    }
+  ],
+  "properties": [
+    {
+      "name": "sbom:note",
+      "value": "This project has NO third-party dependencies. completion_claim_gate.py imports only the Python standard library (json, os, re, subprocess, sys, time, urllib.error, urllib.request, datetime, pathlib). There is no requirements.txt, pyproject.toml, or lockfile. The 'components' array is intentionally empty because the standard library is bundled with the CPython runtime and is not a distributable dependency. Runtime dependency: the CPython interpreter (>= 3.8) plus a locally-running Ollama endpoint, which is an external service, not a Python package."
+    }
+  ]
+}
