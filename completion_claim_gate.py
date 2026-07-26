@@ -338,10 +338,21 @@ def main() -> None:
         # Set VALIDATION_GATE_STRICT=1 to fail closed instead, for contexts
         # where an unverified completion claim is worse than an interruption.
         log(f"verifier unavailable ({v}); strict={STRICT_MODE}")
+        # The notification has to describe what the gate actually did. It used to
+        # report "let the turn through" unconditionally, seconds before
+        # emit_block() blocked it — so the one record of a strict-mode block said
+        # the opposite of what happened.
+        if STRICT_MODE:
+            outcome = (
+                "VALIDATION_GATE_STRICT is set, so the gate BLOCKED the turn."
+            )
+        else:
+            outcome = (
+                "The gate let the turn through because VALIDATION_GATE_STRICT is not set."
+            )
         fire_notify(
             f"validation-gate: verifier {v}",
-            f"Completion claim NOT verified (session {session_id[:8]}). "
-            f"The gate let the turn through because VALIDATION_GATE_STRICT is not set.",
+            f"Completion claim NOT verified (session {session_id[:8]}). {outcome}",
         )
         if STRICT_MODE:
             emit_block(
